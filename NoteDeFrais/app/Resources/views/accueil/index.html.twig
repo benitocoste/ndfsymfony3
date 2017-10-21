@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>{{nom}}</h1>
+    {# <a href="{{ path('app_add') }}">Ajout</a> #}
+    {# <img src="{{imgurl}}"> #}
+    
+    
+
+
+
+  <div class="columns">
+    <div class="column col-1"></div>
+    <div class="column col-3">
+        <h2>Ajout d'une note</h2>
+         {{ form(noteform) }}
+    </div>
+    <div class="column col-7">
+        <h2>Liste des notes</h2>
+
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+             {% for note in listNote %}
+                <tr>
+                    <td>{{ note.Nom }}</td>
+                    <td><a href="#" class="btn btn-primary">Bouton</a></td>
+                </tr>
+             {% endfor %}    
+            </tbody>
+        </table>
+    </div>
+    <div class="column col-1">col-1</div>
+  </div>
+
+
+
+
+{% endblock %}
+
+{% block stylesheets %}
+<style>
+    h1{
+        color: {{h1color}};
+    }
+</style>
+{% endblock %}
